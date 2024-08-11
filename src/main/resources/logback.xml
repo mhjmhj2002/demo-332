@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="JSON" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/home/mhj/IdeaProjects/demo-323/file.json.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                /home/mhj/IdeaProjects/demo-323/file.log.%d{yyyy-MM-dd}
+            </fileNamePattern>
+            <maxHistory>1</maxHistory>
+        </rollingPolicy>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="JSON" />
+    </root>
+</configuration>
